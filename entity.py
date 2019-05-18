@@ -16,6 +16,9 @@ class Entity():
         y1 = math.sin(self.angle)*9999 + self.pos[1]
         self.dir = [x1,y1]
 
+    def get_distance(self):
+        return math.sqrt(math.pow(self.pos[0]-self.dir[0],2)+math.pow(self.pos[1]-self.dir[1],2))
+
     # check if the ray has intersect a wall
     # true -> changes the dir vector to intersection points
     def check(self, wall):
