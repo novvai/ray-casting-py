@@ -12,8 +12,8 @@ class Entity():
     
     # cast a ray in a given direction
     def castRays(self):
-        x1 = math.cos(self.angle)*9999 + self.pos[0]
-        y1 = math.sin(self.angle)*9999 + self.pos[1]
+        x1 = math.cos(self.angle)*500 + self.pos[0]
+        y1 = math.sin(self.angle)*500 + self.pos[1]
         self.dir = [x1,y1]
 
     def get_distance(self):
