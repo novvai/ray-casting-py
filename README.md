@@ -7,3 +7,4 @@ Implementation of ray tracing with Python 3.6
 ~~~
 python main.py
 ~~~
+![Alt text](./ray-tracing.png?raw=true "Preview")
