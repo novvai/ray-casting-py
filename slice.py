@@ -14,6 +14,8 @@ class Slice():
 
     def scale_height_by(self,factor):
         height = (math.tan(45)*factor)/2
+        # height = (self.height*factor)/2
+        
         calc_height = self.height-height
         self.opacity = calc_height*self.color_scale_facotr if calc_height>= self.middle and height!=0 else 0
 

@@ -28,10 +28,14 @@ position = 800+width/2
 
 edit_mode=[False]
 wall_buffer = []
-
+# the angle of the ray that is in the center of all rays
+heading=[0]
+middle = math.ceil(rays/2)
 for i in range(rays):
-    angle = math.radians((i+1) / rays * 45)
+    angle = math.radians(((i+1) / rays) * 45)
     entity_list += [Entity(x1,y1, angle)]
+    if middle == i:
+        heading[0]=angle
     ws_arr+=[Slice(position,0,position,800,width, 800)]
     position+=offset
 
@@ -83,6 +87,8 @@ def on_text_motion(symbol):
         ang = 1
     elif symbol == key.MOTION_RIGHT:
         ang = -1
+
+    heading[0] += math.radians(ang);
     for ent in entity_list:
             ent.angle += math.radians(ang)
 
@@ -101,8 +107,10 @@ def on_draw():
         dist = ent.get_distance()
         scale = 0
         # print(dist)
-        if(dist<500 and dist>0):
+        if(dist<498 and dist>0):
+            dist *= math.cos(abs(ent.angle-heading[0]))
             scale = dist
+            print(scale,ent.angle, heading[0])
         ws_arr[index].scale_height_by(scale)
         ws_arr[index].draw()
         ent.draw()
