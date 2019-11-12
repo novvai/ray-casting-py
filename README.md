@@ -1,5 +1,6 @@
-# ray-tracing-py
-Implementation of ray tracing with Python 3.6
+# Ray Casting
+Implementation of Ray Casting with Python 3.6
+Old school rendering technique for 3D environment
 
 ## Dependencies
 1. pyglet https://pyglet.readthedocs.io
